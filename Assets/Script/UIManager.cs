@@ -10,14 +10,8 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
     }
 
     public void OpenMainMenu()
@@ -39,5 +33,15 @@ public class UIManager : MonoBehaviour
         mainMenuUI.SetActive(false);
         statusUI.SetActive(false);
         inventoryUI.SetActive(true);
+    }
+
+    public void UpdateMainMenu(Character character)
+    {
+        UIMainMenu.Instance.UpdateUI(character);
+    }
+
+    public void UpdateStatus(Character character)
+    {
+        UIStatus.Instance.UpdateUI(character);
     }
 }
