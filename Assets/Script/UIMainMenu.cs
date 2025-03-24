@@ -31,5 +31,6 @@ public class UIMainMenu : MonoBehaviour
         levelText.text = $"Lv. {character.Level}";
         xpText.text = $"{character.CurrentXP} / {character.MaxXP}";
         coinText.text = $"{character.Coins}G";
+
     }
 }

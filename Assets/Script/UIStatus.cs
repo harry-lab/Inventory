@@ -24,9 +24,9 @@ public class UIStatus : MonoBehaviour
 
     public void UpdateUI(Character character)
     {
-        attackText.text = $"공격력: {character.Attack}";
-        defenseText.text = $"방어력: {character.Defense}";
-        hpText.text = $"체력: {character.HP}";
-        criticalText.text = $"치명타: {character.Critical}%";
+        attackText.text = $"Attack: {character.Attack}";
+        defenseText.text = $"Defense: {character.Defense}";
+        hpText.text = $"HP: {character.HP}";
+        criticalText.text = $"Critical: {character.Critical}%";
     }
 }

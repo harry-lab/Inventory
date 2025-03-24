@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,18 +17,31 @@ public class GameManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+
+        while (
+            UIManager.Instance == null ||
+            UIMainMenu.Instance == null ||
+            UIStatus.Instance == null ||
+            UIInventory.Instance == null)
+        {
+            yield return null;
+        }
+
+        yield return null;
+
         SetData();
     }
 
     void SetData()
     {
-        // 예시 데이터
+
         Player = new Character("Chad", 12, 83, 100, 2500, 30, 25, 100, 15);
 
-        // UI에 데이터 전달
         UIManager.Instance.UpdateMainMenu(Player);
         UIManager.Instance.UpdateStatus(Player);
+
+        UIManager.Instance.OpenMainMenu(); // 메인 메뉴 UI 강제 호출
     }
 }
