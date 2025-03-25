@@ -33,5 +33,11 @@ public class Character
 
         Sprite manaPotionIcon = Resources.Load<Sprite>("Sprites/ManaPotion");
         Inventory.Add(new Item("ManaPotion", manaPotionIcon, 3));
+
+        Sprite sword0Icon = Resources.Load<Sprite>("Sprites/Sword0");
+        Inventory.Add(new Item("Sword0", sword0Icon, 1));
+
+        Sprite sword1Icon = Resources.Load<Sprite>("Sprites/Sword1");
+        Inventory.Add(new Item("Sword1", sword1Icon, 1));
     }
 }
