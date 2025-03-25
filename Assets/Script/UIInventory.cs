@@ -32,4 +32,9 @@ public class UIInventory : MonoBehaviour
             slot.SetItem(item);
         }
     }
+
+    public void Refresh()
+    {
+        ShowInventory(GameManager.Instance.Player.Inventory);
+    }
 }
